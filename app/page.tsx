@@ -1,103 +1,98 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Code } from "lucide-react";
+import ProjectsCard from "@/components/ProjectsCard";
+import CircularText from "@/components/CircularText";
 
 export default function Home() {
+  const phoneNumber = "+201021094777";
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+    <main
+      className="max-h-screen w-full grid col-span-12 gap-6  
+                     grid-cols-12 
+                     auto-rows-auto font-kufam "
+    >
+      {/* Large Card */}
+      <div className=" rounded-xl gap-4 col-span-12 xl:col-span-8 row-span-12  grid grid-cols-12">
+        <div className=" col-span-12 xl:col-span-7 rounded-xl p-6 flex flex-col justify-between  bg-[var(--primary)] hover:scale-101 hover:shadow-2xl duration-300 ease-in-out">
+          <div className="self-end">
+            <CircularText
+              text="Hussein*ELSaeid*"
+              onHover="speedUp"
+              spinDuration={20}
+              className="custom-class"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="">
+            <p className="font-bold text-3xl xl:text-5xl ">
+              Frontend Developer <br />
+              <span className="font-extralight">Empowering</span> Modern <br />
+              Web Experiences
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <div className=" hover:scale-101 hover:shadow-2xl duration-300 ease-in-out col-span-12 xl:col-span-5 rounded-xl">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/personal.jpg"
+            alt="Husseun"
+            width={1000}
+            height={800}
+            className="w-full h-full object-cover object-center  rounded-xl "
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        </div>
+        <div className="hover:scale-101 hover:shadow-2xl duration-300 ease-in-out col-span-12 xl:col-span-6 rounded-xl p-4 bg-[var(--primary)] justify-between flex flex-col gap-10 ">
+          <Code />
+          <p>
+            Hussein ELSaeid is a creative Frontend Developer, passionate about
+            crafting modern and responsive web experiences. With expertise in
+            React, Next.js, and UI/UX principles, he blends clean code with
+            thoughtful design to deliver interfaces that are visually engaging.
+            Based in Egypt, he builds digital experiences accessible to users
+            worldwide.
+          </p>
+        </div>
+        <div className="gap-4 py-6 hover:scale-101 hover:shadow-2xl duration-300 ease-in-out col-span-12 xl:col-span-6 rounded-xl p-2 xl:p-4 bg-[var(--secondary)] flex flex-col justify-between">
+          <div className="flex justify-between">
+            <p>
+              Have some <br className="hidden lg:block" /> questions?
+            </p>
+            <ArrowUpRight />
+          </div>
+          <div>
+            <Link className=" " href={`https://wa.me/${phoneNumber}`}>
+              Contact Me
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="   gap-4  col-span-12  xl:col-span-4 row-span-12 grid grid-cols-12 ">
+        <div className="  rounded-xl  bg-[var(--primary)] col-span-12 row-span-12 p-6">
+          <ProjectsCard />
+        </div>
+        <div className=" rounded-xl bg-[var(--primary)]  col-span-12 p-4 md:px-12 gap-4 flex justify-between">
+          <Link
+            href="https://github.com/HusseinSaeid"
+            target="_blank"
+            className="link"
+          >
+            GITHUB
+          </Link>
+          <Link
+            href="https://github.com/HusseinSaeid"
+            target="_blank"
+            className="link"
+          >
+            LINKEDIN
+          </Link>
+          <Link
+            href="https://mostaql.com/u/Husseinsaeid98"
+            target="_blank"
+            className="link"
+          >
+            MOSTAQL
+          </Link>
+        </div>
+      </div>
+    </main>
   );
 }

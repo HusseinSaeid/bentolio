@@ -1,8 +1,36 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
+html {
+  /* Prevent scrolling if content accidentally exceeds viewport width */
+  overflow-x: hidden;
+}
+
+body {
+  /* Ensure the body itself doesn't cause overflow */
+  overflow-x: hidden;
+  /* Use a viewport-based height if you want full-screen vertical fill without scroll */
+  min-height: 100vh;
+}
+
+/* Light mode variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0f9ff; /* Light background */
+  --foreground: #171717; /* Light text */
+  --primary: #bae6fd; /* Light primary */
+  --secondary: #38bdf8; /* Light secondary */
+  --shadow-elevation: rgba(0, 0, 0, 0.12) 0px 1px 3px,
+    rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+/* Dark mode variables */
+.dark {
+  --background: #1e1e2f;
+  --foreground: #ededed;
+  --primary: #3a3a4f;
+  --secondary: #bb86fc;
+  --shadow-elevation: rgba(0, 0, 0, 0.6) 0px 4px 8px,
+    rgba(0, 0, 0, 0.4) 0px 2px 4px;
 }
 
 @theme inline {
@@ -10,17 +38,22 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-kufam: var(--font-kufam);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+.link:after {
+  display: block;
+  content: "";
+  width: inherit;
+  border-bottom: solid 3px var(--foreground);
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.link:hover:after {
+  transform: scaleX(1);
 }
