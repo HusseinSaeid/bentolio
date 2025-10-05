@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Kufam } from "next/font/google";
+import { Geist, Geist_Mono, Kufam, Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import ThemeProvider from "../theme/ThemeProvider";
@@ -10,6 +10,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 const kufam = Kufam({ variable: "--font-Kufam", subsets: ["latin"] });
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["300"], // Light
+});
 
 export const metadata: Metadata = {
   title: "Next App with Top Navbar",
@@ -24,7 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${kufam.variable} antialiased max-h-screen w-full flex flex-col gap-6 p-12  font-kufam`}
+        className={`${geistSans.variable} ${geistMono.variable} ${kufam.variable}
+         ${poppins.variable} antialiased max-h-screen w-full flex flex-col gap-6 p-12  font-kufam`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavBar />

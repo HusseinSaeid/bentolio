@@ -4,28 +4,40 @@ import { ExternalLink } from "lucide-react";
 export default function ProjectsList() {
   const projects = [
     {
-      name: "E-commerce Website",
-      desc: "Responsive online store with Next.js & TailwindCSS.",
-      link: "https://github.com/HusseinSaeid/ecommerce",
-      tags: ["Next.js", "TailwindCSS"],
+      name: "Personal-Portfolio",
+      desc: "A personal portfolio built with Next.js, Tailwind CSS, Framer Motion, and Swiper.js.",
+      link: "https://github.com/HusseinSaeid/Personal-Portfolio",
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Framer Motion",
+        "Swiper.js",
+      ],
     },
     {
-      name: "Portfolio Website",
-      desc: "Showcasing UI/UX & frontend skills.",
-      link: "https://github.com/HusseinSaeid/portfolio",
-      tags: ["React", "UI/UX"],
+      name: "FasterUI ",
+      desc: "A modern agency template built with Next.js, Tailwind CSS, Framer Motion, and shadcn/ui.",
+      link: "https://github.com/HusseinSaeid/fasterui",
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "shadcn/ui",
+      ],
     },
     {
-      name: "Interactive Web App",
-      desc: "Dynamic web app with API integration.",
-      link: "https://github.com/HusseinSaeid/webapp",
-      tags: ["React", "API"],
+      name: "Resumix",
+      desc: "A modern web application that  analyze resumes with (ATS) compatibility ,Built with Next.js + TypeScript and powered by Puter.js",
+      link: "https://github.com/HusseinSaeid/ats-resume-checker",
+      tags: ["Next.js", "TypeScript", "Puter.js", "Tailwind CSS"],
     },
     {
-      name: "Blog Platform",
-      desc: "Minimal blog with Markdown support.",
-      link: "https://github.com/HusseinSaeid/blog",
-      tags: ["Markdown", "CMS"],
+      name: "Bentolio",
+      desc: "Minimal Personal Portfolio built with Next.js, Tailwind CSS",
+      link: "https://github.com/HusseinSaeid/bentolio",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     },
   ];
 
@@ -41,7 +53,7 @@ export default function ProjectsList() {
             rel="noopener noreferrer"
             className="group w-full flex justify-between items-start gap-4 p-4 rounded-lg 
                      bg-[var(--secondary)] hover:bg-opacity-80 
-                     transition-all duration-200 hover:shadow-md"
+                     transition-all duration-200 hover:shadow-md hover:scale-101"
             aria-label={`View ${project.name} on GitHub`}
           >
             <div className="flex-1 min-w-0">
@@ -50,7 +62,7 @@ export default function ProjectsList() {
                   {project.name}
                 </h3>
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2 line-clamp-2">
+              <p className="text-sm text-gray-600 dark:text-gray-600 mb-2 line-clamp-2">
                 {project.desc}
               </p>
               {project.tags && (
@@ -69,7 +81,7 @@ export default function ProjectsList() {
             </div>
             <ExternalLink
               size={18}
-              className="flex-shrink-0 mt-1 text-gray-600 dark:text-gray-400 
+              className="flex-shrink-0 mt-1 text-gray-600 dark:text-gray-600 
                        group-hover:text-gray-900 dark:group-hover:text-white 
                        transition-colors"
               aria-hidden="true"

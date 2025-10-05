@@ -26,7 +26,10 @@ export default function Home() {
           <div className="">
             <p className="font-bold text-3xl xl:text-5xl ">
               Frontend Developer <br />
-              <span className="font-extralight">Empowering</span> Modern <br />
+              <span className="font-extralight font-poppins">
+                Empowering
+              </span>{" "}
+              Modern <br />
               Web Experiences
             </p>
           </div>
@@ -51,7 +54,11 @@ export default function Home() {
             worldwide.
           </p>
         </div>
-        <div className="gap-4 py-6 hover:scale-101 hover:shadow-2xl duration-300 ease-in-out col-span-12 xl:col-span-6 rounded-xl p-2 xl:p-4 bg-[var(--secondary)] flex flex-col justify-between">
+        <Link
+          target="_blank"
+          href={`https://wa.me/${phoneNumber}`}
+          className="gap-4 py-6 hover:scale-101  hover:shadow-2xl duration-300 ease-in-out col-span-12 xl:col-span-6 rounded-xl p-2 px-4  xl:p-4 bg-[var(--secondary)] flex flex-col justify-between"
+        >
           <div className="flex justify-between">
             <p>
               Have some <br className="hidden lg:block" /> questions?
@@ -59,11 +66,9 @@ export default function Home() {
             <ArrowUpRight />
           </div>
           <div>
-            <Link className=" " href={`https://wa.me/${phoneNumber}`}>
-              Contact Me
-            </Link>
+            <p>Contact Me</p>
           </div>
-        </div>
+        </Link>
       </div>
       <div className="   gap-4  col-span-12  xl:col-span-4 row-span-12 grid grid-cols-12 ">
         <div className="  rounded-xl  bg-[var(--primary)] col-span-12 row-span-12 p-6">
@@ -73,21 +78,21 @@ export default function Home() {
           <Link
             href="https://github.com/HusseinSaeid"
             target="_blank"
-            className="link"
+            className="link hover:scale-105 duration-300 ease-in-out"
           >
             GITHUB
           </Link>
           <Link
             href="https://github.com/HusseinSaeid"
             target="_blank"
-            className="link"
+            className="link hover:scale-105 duration-300 ease-in-out"
           >
             LINKEDIN
           </Link>
           <Link
             href="https://mostaql.com/u/Husseinsaeid98"
             target="_blank"
-            className="link"
+            className="link hover:scale-105 duration-300 ease-in-out"
           >
             MOSTAQL
           </Link>
