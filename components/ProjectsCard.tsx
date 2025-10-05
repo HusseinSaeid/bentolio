@@ -16,7 +16,7 @@ export default function ProjectsList() {
       ],
     },
     {
-      name: "FasterUI ",
+      name: "FasterUI",
       desc: "A modern agency template built with Next.js, Tailwind CSS, Framer Motion, and shadcn/ui.",
       link: "https://github.com/HusseinSaeid/fasterui",
       tags: [
@@ -29,66 +29,81 @@ export default function ProjectsList() {
     },
     {
       name: "Resumix",
-      desc: "A modern web application that  analyze resumes with (ATS) compatibility ,Built with Next.js + TypeScript and powered by Puter.js",
+      desc: "A modern web app that analyzes resumes for ATS compatibility. Built with Next.js + TypeScript and powered by Puter.js.",
       link: "https://github.com/HusseinSaeid/ats-resume-checker",
       tags: ["Next.js", "TypeScript", "Puter.js", "Tailwind CSS"],
     },
     {
       name: "Bentolio",
-      desc: "Minimal Personal Portfolio built with Next.js, Tailwind CSS",
+      desc: "Minimal personal portfolio built with Next.js and Tailwind CSS.",
       link: "https://github.com/HusseinSaeid/bentolio",
       tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     },
   ];
 
   return (
-    <div className="flex flex-col gap-6 justify-between ">
-      <h2 className="text-2xl font-bold">Recent Projects</h2>
-      <div className="flex flex-col gap-3">
+    <section
+      aria-labelledby="projects-heading"
+      className="flex flex-col gap-6 justify-between"
+    >
+      <h2
+        id="projects-heading"
+        className="text-2xl font-bold text-[var(--foreground)]"
+      >
+        Recent Projects
+      </h2>
+
+      <div className="flex flex-col gap-4">
         {projects.map((project) => (
-          <Link
+          <article
             key={project.name}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group w-full flex justify-between items-start gap-4 p-4 rounded-lg 
-                     bg-[var(--secondary)] hover:bg-opacity-80 
-                     transition-all duration-200 hover:shadow-md hover:scale-101"
-            aria-label={`View ${project.name} on GitHub`}
+            className="w-full rounded-xl bg-[var(--secondary)] bg-opacity-95
+                       transition-all duration-300 hover:bg-opacity-100
+                       hover:scale-105 hover:shadow-lg
+                       focus-within:ring-2 focus-within:ring-[var(--primary)]
+                       focus-within:ring-offset-2 focus-within:ring-offset-[var(--background)]"
           >
-            <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 mb-1">
-                <h3 className="font-semibold text-base group-hover:underline">
+            <Link
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex justify-between items-start gap-4 p-5 focus-visible:outline-none"
+              aria-label={`View ${project.name} on GitHub`}
+            >
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-base text-white dark:text-[var(--foreground)] group-hover:underline">
                   {project.name}
                 </h3>
+
+                <p className="text-sm text-[var(--background)] dark:text-[var(--foreground)] mb-3 line-clamp-2">
+                  {project.desc}
+                </p>
+
+                {project.tags && (
+                  <div className="flex gap-2 flex-wrap">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-xs px-2 shadow-lg py-1 rounded-full bg-[var(--primary)] text-black dark:text-white font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
               </div>
-              <p className="text-sm text-gray-600 dark:text-gray-600 mb-2 line-clamp-2">
-                {project.desc}
-              </p>
-              {project.tags && (
-                <div className="flex gap-2 flex-wrap">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2 py-1 rounded-full bg-[var(--primary)] 
-                               text-gray-700 dark:text-gray-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
-            </div>
-            <ExternalLink
-              size={18}
-              className="flex-shrink-0 mt-1 text-gray-600 dark:text-gray-600 
-                       group-hover:text-gray-900 dark:group-hover:text-white 
-                       transition-colors"
-              aria-hidden="true"
-            />
-          </Link>
+
+              <ExternalLink
+                size={18}
+                className="flex-shrink-0 mt-1 text-white dark:text-[var(--foreground)]
+                           group-hover:text-[var(--primary)]
+                           transition-colors duration-200"
+                aria-hidden="true"
+              />
+            </Link>
+          </article>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
