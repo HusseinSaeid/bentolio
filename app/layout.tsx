@@ -17,7 +17,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://husseinsaeid.vercel.app"),
+  metadataBase: new URL("https://bentolio-portfoilo.vercel.app/"),
   title: "Hussein Saeid — Front-End Developer",
   description:
     "Portfolio of Hussein Saeid, a Front-End Developer skilled in React, Next.js, and modern UI/UX design.",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Hussein Saeid — Front-End Developer",
     description:
       "Explore my modern, responsive web portfolio built with Next.js and Tailwind CSS.",
-    url: "https://husseinsaeid.vercel.app",
+    url: "https://bentolio-portfoilo.vercel.app/",
     images: ["/personal.jpg"],
     type: "website",
   },
