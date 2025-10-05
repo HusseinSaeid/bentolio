@@ -48,3 +48,8 @@ npm run dev
 Then open http://localhost:3000
 ```
 ## 🌐 [Live Demo](https://bentolio-portfoilo.vercel.app/)
+
+## 🧾 License
+This project is open-source under the MIT License
+
+## 💚 Built by Hussein Saeid
